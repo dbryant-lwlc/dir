@@ -1,0 +1,34 @@
+{
+  "staff": [
+    {
+      "first_name": "Jane",
+      "last_name": "Doe",
+      "full_name": "Jane Doe",
+      "title": "Reference Librarian",
+      "department": "Research Services",
+      "email": "jdoe@university.edu",
+      "phone": "(555) 123-4567"
+    }
+  ],
+  "departments": [
+    {
+      "name": "Research Services",
+      "phone": "(555) 123-8900",
+      "url": "https://library.university.edu/research"
+    }
+  ],
+  "subject_specialists": [
+    {
+      "department": "Digital Services",
+      "specialists": [
+        {
+          "name": "John Smith",
+          "title": "Digital Librarian",
+          "email": "jsmith@university.edu",
+          "phone": "(555) 987-6543",
+          "office": "Room 101"
+        }
+      ]
+    }
+  ]
+}
