@@ -1,32 +1,708 @@
 {
   "staff": [
     {
-      "first_name": "Jane",
-      "last_name": "Doe",
-      "full_name": "Jane Doe",
-      "title": "Reference Librarian",
-      "department": "Research Services",
-      "email": "jdoe@university.edu",
-      "phone": "(555) 123-4567"
+      "first_name": "Janice",
+      "last_name": "Franklin",
+      "full_name": "Janice Franklin",
+      "title": "Dean",
+      "department": "Administration",
+      "email": "jfrankin@alasu.edu",
+      "phone": "(334) 229-4106"
+    },
+    {
+      "first_name": "Ashley",
+      "last_name": "Eaton",
+      "full_name": "Ashley Eaton",
+      "title": "Acquisition and Procurement Manager",
+      "department": "Acquisition and Procurement",
+      "email": "aeaton@alasu.edu",
+      "phone": "(334) 604-8045"
+    },
+    {
+      "first_name": "Barbara",
+      "last_name": "Weatherly",
+      "full_name": "Barbara Weatherly",
+      "title": "Part-time Staff Associate",
+      "department": "Center for Civil Rights",
+      "email": "bweatherly@alasu.edu",
+      "phone": "(334) 229-4854"
+    },
+    {
+      "first_name": "Chalanna",
+      "last_name": "Tate",
+      "full_name": "Chalanna Tate",
+      "title": "Serials Assistant",
+      "department": "Serials",
+      "email": "ctate@alasu.edu",
+      "phone": "(334) 604-8001"
+    },
+    {
+      "first_name": "Charlotte",
+      "last_name": "Daniel Carr",
+      "full_name": "Charlotte Daniel Carr",
+      "title": "Library Assistant for Graduate Programs",
+      "department": "Interlibrary Loan",
+      "email": "chdaniel@alasu.edu",
+      "phone": "(334) 604-8004"
+    },
+    {
+      "first_name": "Clarissa",
+      "last_name": "Broughton",
+      "full_name": "Clarissa Broughton",
+      "title": "Serials Assistant",
+      "department": "Serials",
+      "email": "cbroughton@alasu.edu",
+      "phone": "(334) 604-9010"
+    },
+    {
+      "first_name": "Derrick",
+      "last_name": "Bryant",
+      "full_name": "Derrick Bryant",
+      "title": "Multimedia Design Specialist",
+      "department": "Graphics and Web Design",
+      "email": "dbryant@alasu.edu",
+      "phone": "(334) 604-8082"
+    },
+    {
+      "first_name": "Edna",
+      "last_name": "Foxhall",
+      "full_name": "Edna Foxhall",
+      "title": "Cataloging/Metadata Librarian",
+      "department": "Technical Services",
+      "email": "efoxhall@alasu.edu",
+      "phone": "(334) 604-8025"
+    },
+    {
+      "first_name": "Eric",
+      "last_name": "Prescott",
+      "full_name": "Eric Prescott",
+      "title": "Media Technician",
+      "department": "Media Center",
+      "email": "eprescott@alasu.edu",
+      "phone": "(334) 604-8044"
+    },
+    {
+      "first_name": "Evelyn",
+      "last_name": "Bowen",
+      "full_name": "Evelyn Bowen",
+      "title": "Operations Manager",
+      "department": "Administration",
+      "email": "ebowen@alasu.edu",
+      "phone": "(334) 229-4116"
+    },
+    {
+      "first_name": "Hassna",
+      "last_name": "Ramadan",
+      "full_name": "Hassna Ramadan",
+      "title": "Digital Innovation and Access Services Librarian",
+      "department": "Digitization",
+      "email": "hramadan@alasu.edu",
+      "phone": "(334) 604-8027"
+    },
+    {
+      "first_name": "Howard",
+      "last_name": "Robinson",
+      "full_name": "Howard Robinson",
+      "title": "Associate Director for Archives and Cultural Heritage Services",
+      "department": "Administration",
+      "email": "hrobinson@alasu.edu",
+      "phone": "(334) 229-4491"
+    },
+    {
+      "first_name": "Jamillah",
+      "last_name": "Bell",
+      "full_name": "Jamillah Bell",
+      "title": "Staff Associate",
+      "department": "Center for Civil Rights",
+      "email": "jbell@alasu.edu",
+      "phone": "(334) 604-9119"
+    },
+    {
+      "first_name": "Jason",
+      "last_name": "Trawick",
+      "full_name": "Jason Trawick",
+      "title": "Archives Assistant",
+      "department": "Archives",
+      "email": "jtrawick@alasu.edu",
+      "phone": "(334) 604-9121"
+    },
+    {
+      "first_name": "Jessica",
+      "last_name": "Platt",
+      "full_name": "Jessica Platt",
+      "title": "Associate Coordinator of Research, Instruction, and Engagement",
+      "department": "Research, Instruction, & Engagement",
+      "email": "jplatt@alasu.edu",
+      "phone": "(334) 604-9057"
+    },
+    {
+      "first_name": "Kashonda",
+      "last_name": "Murphy",
+      "full_name": "Kashonda Murphy",
+      "title": "Historical Archivist",
+      "department": "Archives",
+      "email": "kmurphy@alasu.edu",
+      "phone": "(334) 604-9092"
+    },
+    {
+      "first_name": "Kevin",
+      "last_name": "Willis",
+      "full_name": "Kevin Willis",
+      "title": "Evening & Night Manager",
+      "department": "Facilities",
+      "email": "kwillis@alasu.edu",
+      "phone": "(334) 604-8085"
+    },
+    {
+      "first_name": "Lydia",
+      "last_name": "Yu",
+      "full_name": "Lydia Yu",
+      "title": "Visual Artist/Print Digital Curator",
+      "department": "Graphics & Web Design",
+      "email": "lyu@alasu.edu",
+      "phone": "(334) 604-8077"
+    },
+    {
+      "first_name": "Matthew",
+      "last_name": "Tigner",
+      "full_name": "Matthew Tigner",
+      "title": "Instructional Technologist",
+      "department": "Instructional Technology",
+      "email": "mtigner@alasu.edu",
+      "phone": "(334) 604-8112"
+    },
+    {
+      "first_name": "Michael",
+      "last_name": "Bean",
+      "full_name": "Michael Bean",
+      "title": "Collections Archivist",
+      "department": "Archives",
+      "email": "mbean@alasu.edu",
+      "phone": "(334) 604-9095"
+    },
+    {
+      "first_name": "Monica",
+      "last_name": "Hodge",
+      "full_name": "Monica Hodge",
+      "title": "Health Sciences Librarian",
+      "department": "Research, Instruction, & Engagement",
+      "email": "mhodge@alasu.edu",
+      "phone": "(334) 604-8086"
+    },
+    {
+      "first_name": "Natasha",
+      "last_name": "Jenkins",
+      "full_name": "Natasha Jenkins",
+      "title": "Administrative Head Coordinator for Public, Technical, and Assessment Services",
+      "department": "Administration",
+      "email": "njenkins@alasu.edu",
+      "phone": "(334) 604-8084"
+    },
+    {
+      "first_name": "Neil",
+      "last_name": "Foulger",
+      "full_name": "Neil Foulger",
+      "title": "Electronic Resources/Serials Services Librarian",
+      "department": "Technical Services",
+      "email": "nfoulger@alasu.edu",
+      "phone": "(334) 604-9091"
+    },
+    {
+      "first_name": "Raegan",
+      "last_name": "Stearns",
+      "full_name": "Raegan Stearns",
+      "title": "Archivist",
+      "department": "Archives",
+      "email": "rstearns@alasu.edu",
+      "phone": "(334) 604-9122"
+    },
+    {
+      "first_name": "Randy",
+      "last_name": "Curtis",
+      "full_name": "Randy Curtis",
+      "title": "Microcomputer Systems Technician",
+      "department": "Technology/Digitization",
+      "email": "rcurtis@alasu.edu",
+      "phone": "(334) 604-9065"
+    },
+    {
+      "first_name": "Reena",
+      "last_name": "Miller",
+      "full_name": "Reena Miller",
+      "title": "Administrative Secretary",
+      "department": "Administration",
+      "email": "remiller@alasu.edu",
+      "phone": "(334) 604-9077"
+    },
+    {
+      "first_name": "Robert",
+      "last_name": "Calloway",
+      "full_name": "Robert Calloway",
+      "title": "Circulation Assistant",
+      "department": "Acquisition and Procurement",
+      "email": "rcalloway@alasu.edu",
+      "phone": "(334) 604-3310"
+    },
+    {
+      "first_name": "Tamiko",
+      "last_name": "Lawrence",
+      "full_name": "Tamiko Lawrence",
+      "title": "Education Librarian",
+      "department": "Research, Instruction, & Engagement",
+      "email": "tlawrence@alasu.edu",
+      "phone": "(334) 604-8144"
+    },
+    {
+      "first_name": "Teisha",
+      "last_name": "Robertson",
+      "full_name": "Teisha Robertson",
+      "title": "Science Librarian",
+      "department": "Research, Instruction, & Engagement",
+      "email": "trobertson@alasu.edu",
+      "phone": "(334) 604-3110"
+    },
+    {
+      "first_name": "Terrance",
+      "last_name": "Quince",
+      "full_name": "Terrance Quince",
+      "title": "Security Officer",
+      "department": "Security",
+      "email": "tquince@alasu.edu",
+      "phone": "(334) 229-6998"
+    },
+    {
+      "first_name": "Timothy",
+      "last_name": "Ervin",
+      "full_name": "Timothy Ervin",
+      "title": "Cultural Heritage Coordinator",
+      "department": "Center for Civil Rights",
+      "email": "tervin@alasu.edu",
+      "phone": "(334) 604-8195"
+    },
+    {
+      "first_name": "Walter",
+      "last_name": "Davis",
+      "full_name": "Walter Davis",
+      "title": "Media Technician",
+      "department": "Media Center",
+      "email": "wdavis@alasu.edu",
+      "phone": "(334) 604-9012"
+    },
+    {
+      "first_name": "Yannick",
+      "last_name": "Kouaho",
+      "full_name": "Yannick Kouaho",
+      "title": "LWLC Coordinator of Technology Operations and Digital Services",
+      "department": "Technology/Digitization",
+      "email": "nkouaho@alasu.edu",
+      "phone": "(334) 604-8104"
+    },
+    {
+      "first_name": "Yolanda",
+      "last_name": "Smith-Evans",
+      "full_name": "Yolanda Smith-Evans",
+      "title": "Metadata Digitization Assistant",
+      "department": "Digitization",
+      "email": "yevans@alasu.edu",
+      "phone": "(334) 604-8002"
+    },
+    {
+      "first_name": "Yvette",
+      "last_name": "Harris",
+      "full_name": "Yvette Harris",
+      "title": "Staff Associate",
+      "department": "Center for Civil Rights",
+      "email": "yharris@alasu.edu",
+      "phone": "(334) 604-9067"
     }
   ],
   "departments": [
     {
-      "name": "Research Services",
-      "phone": "(555) 123-8900",
-      "url": "https://library.university.edu/research"
+      "name": "Administration",
+      "phone": "(334) 229-4106",
+      "url": null
+    },
+    {
+      "name": "Acquisitions",
+      "phone": "(334) 604-8045",
+      "url": null
+    },
+    {
+      "name": "Archives",
+      "phone": "email: archives@alasu.edu",
+      "url": "https://www.lib.alasu.edu/archives/index.html"
+    },
+    {
+      "name": "Cataloging",
+      "phone": "(334) 604-8025",
+      "url": null
+    },
+    {
+      "name": "Circulation & Reference",
+      "phone": "(334) 604-9164",
+      "url": null
+    },
+    {
+      "name": "Computer Labs",
+      "phone": "(334) 604-8192",
+      "url": "https://www.lib.alasu.edu/computer-lab.html"
+    },
+    {
+      "name": "Curriculums Material Center",
+      "phone": "(334) 604-9057",
+      "url": null
+    },
+    {
+      "name": "Information Desks",
+      "phone": "(334) 604-9164 LWLC 1st Floor",
+      "url": null
+    },
+    {
+      "name": "Information Literacy",
+      "phone": "Instruction Request",
+      "url": "https://alasu.libguides.com/faculty/infolit"
+    },
+    {
+      "name": "Instructional Technology",
+      "phone": "LWLC 5th Floor",
+      "url": "https://www.lib.alasu.edu/itservices.html"
+    },
+    {
+      "name": "Interlibrary Loan",
+      "phone": "",
+      "url": "https://www.lib.alasu.edu/interlibrary-loan.html"
+    },
+    {
+      "name": "Media Center",
+      "phone": "(334) 229-6848",
+      "url": "https://www.lib.alasu.edu/media-center.html"
+    },
+    {
+      "name": "National Center for the Study of Civil Rights & African-American Culture",
+      "phone": "(334) 229-4876",
+      "url": "https://www.lib.alasu.edu/natctr"
+    },
+    {
+      "name": "Scholarly Communication",
+      "phone": "(334)604-8084",
+      "url": null
+    },
+    {
+      "name": "Security",
+      "phone": "(334) 229-6998",
+      "url": null
+    },
+    {
+      "name": "Serials/Periodicals",
+      "phone": "(334) 229-4111",
+      "url": null
+    },
+    {
+      "name": "Special Collections",
+      "phone": "(334) 604-8483",
+      "url": null
     }
   ],
   "subject_specialists": [
     {
-      "department": "Digital Services",
+      "department": "Archives",
       "specialists": [
         {
-          "name": "John Smith",
-          "title": "Digital Librarian",
-          "email": "jsmith@university.edu",
-          "phone": "(555) 987-6543",
-          "office": "Room 101"
+          "name": "Raegan Stearns",
+          "title": "Archivist",
+          "email": "rstearns@alasu.edu",
+          "phone": "(334) 604-9122",
+          "office": "LWLC, Room #255"
+        }
+      ]
+    },
+    {
+      "department": "ASU History",
+      "specialists": [
+        {
+          "name": "Michael Bean",
+          "title": "Collections Archivist",
+          "email": "mbean@alasu.edu",
+          "phone": "(334) 604-9095",
+          "office": "LWLC, Room #257"
+        },
+        {
+          "name": "Kashonda Murphy",
+          "title": "Historical Archivist",
+          "email": "kmurphy@alasu.edu",
+          "phone": "(334)\u00a0604-9092",
+          "office": "LWLC, Room #155"
+        },
+        {
+          "name": "Raegan Stearns",
+          "title": "Archivist",
+          "email": "rstearns@alasu.edu",
+          "phone": "(334) 604-9122",
+          "office": "LWLC, Room #255"
+        }
+      ]
+    },
+    {
+      "department": "Business",
+      "specialists": [
+        {
+          "name": "Michael Bean",
+          "title": "Collections Archivist",
+          "email": "mbean@alasu.edu",
+          "phone": "(334) 604-9095",
+          "office": "LWLC, Room #257"
+        }
+      ]
+    },
+    {
+      "department": "Communications",
+      "specialists": [
+        {
+          "name": "Michael Bean",
+          "title": "Collections Archivist",
+          "email": "mbean@alasu.edu",
+          "phone": "(334) 604-9095",
+          "office": "LWLC, Room #257"
+        }
+      ]
+    },
+    {
+      "department": "Criminal Justice",
+      "specialists": [
+        {
+          "name": "Hassna Ramadan",
+          "title": "Digital Innovation and Access Services Librarian",
+          "email": "hramadan@alasu.edu",
+          "phone": "(334) 604-8027",
+          "office": "LWLC, Room #146"
+        }
+      ]
+    },
+    {
+      "department": "Dance",
+      "specialists": [
+        {
+          "name": "Hassna Ramadan",
+          "title": "Digital Innovation and Access Services Librarian",
+          "email": "hramadan@alasu.edu",
+          "phone": "(334) 604-8027",
+          "office": "LWLC, Room #146"
+        }
+      ]
+    },
+    {
+      "department": "Education",
+      "specialists": [
+        {
+          "name": "Tamiko Lawrence",
+          "title": "Education Librarian",
+          "email": "tlawrence@alasu.edu",
+          "phone": "(334) 604-8144",
+          "office": "LWLC, Room #425"
+        }
+      ]
+    },
+    {
+      "department": "Engineering",
+      "specialists": [
+        {
+          "name": "Teisha Robertson",
+          "title": "Science Librarian",
+          "email": "trobertson@alasu.edu",
+          "phone": "(334) 604-3110",
+          "office": "LWLC, Room #424"
+        }
+      ]
+    },
+    {
+      "department": "First Year Experience",
+      "specialists": [
+        {
+          "name": "Dr. Monica Hodge",
+          "title": "Health Sciences Librarian",
+          "email": "mhodge@alasu.edu",
+          "phone": "(334) 604-8086",
+          "office": "LWLC, Room #325"
+        }
+      ]
+    },
+    {
+      "department": "Languages and Literatures",
+      "specialists": [
+        {
+          "name": "Hassna Ramadan",
+          "title": "Digital Innovation and Access Services Librarian",
+          "email": "hramadan@alasu.edu",
+          "phone": "(334) 604-8027",
+          "office": "LWLC, Room #146"
+        }
+      ]
+    },
+    {
+      "department": "Geography",
+      "specialists": [
+        {
+          "name": "Neil Foulger",
+          "title": "Electronic Resources/Serials Services Librarian",
+          "email": "nfoulger@alasu.edu",
+          "phone": "(334) 604-9091",
+          "office": "LWLC, Room #137-B"
+        }
+      ]
+    },
+    {
+      "department": "Government",
+      "specialists": [
+        {
+          "name": "Neil Foulger",
+          "title": "Electronic Resources/Serials Services Librarian",
+          "email": "nfoulger@alasu.edu",
+          "phone": "(334) 604-9091",
+          "office": "LWLC, Room #137-B"
+        }
+      ]
+    },
+    {
+      "department": "Health Sciences",
+      "specialists": [
+        {
+          "name": "Dr. Monica Hodge",
+          "title": "Health Sciences Librarian",
+          "email": "mhodge@alasu.edu",
+          "phone": "(334) 604-8086",
+          "office": "LWLC, Room #325"
+        }
+      ]
+    },
+    {
+      "department": "History",
+      "specialists": [
+        {
+          "name": "Neil Foulger",
+          "title": "Electronic Resources/Serials Services Librarian",
+          "email": "nfoulger@alasu.edu",
+          "phone": "(334) 604-9091",
+          "office": "LWLC, Room #137-B"
+        }
+      ]
+    },
+    {
+      "department": "Mathematics",
+      "specialists": [
+        {
+          "name": "Teisha Robertson",
+          "title": "Science Librarian",
+          "email": "trobertson@alasu.edu",
+          "phone": "(334) 604-3110",
+          "office": "LWLC, Room #424"
+        }
+      ]
+    },
+    {
+      "department": "Music",
+      "specialists": [
+        {
+          "name": "Neil Foulger",
+          "title": "Electronic Resources/Serials Services Librarian",
+          "email": "nfoulger@alasu.edu",
+          "phone": "(334) 604-9091",
+          "office": "LWLC, Room #137-B"
+        }
+      ]
+    },
+    {
+      "department": "Political Science",
+      "specialists": [
+        {
+          "name": "Neil Foulger",
+          "title": "Electronic Resources/Serials Services Librarian",
+          "email": "nfoulger@alasu.edu",
+          "phone": "(334) 604-9091",
+          "office": "LWLC, Room #137-B"
+        }
+      ]
+    },
+    {
+      "department": "Psychology",
+      "specialists": [
+        {
+          "name": "Jessica E. Platt",
+          "title": "Associate Coordinator of Research, Instruction, and Engagement",
+          "email": "jplatt@alasu.edu",
+          "phone": "(334) 604-9057",
+          "office": "LWLC, Room #134"
+        }
+      ]
+    },
+    {
+      "department": "Science",
+      "specialists": [
+        {
+          "name": "Teisha Robertson",
+          "title": "Science Librarian",
+          "email": "trobertson@alasu.edu",
+          "phone": "(334) 604-3110",
+          "office": "LWLC, Room #424"
+        }
+      ]
+    },
+    {
+      "department": "Social Work",
+      "specialists": [
+        {
+          "name": "Edna Foxhall",
+          "title": "Cataloging Metadata Librarian",
+          "email": "efoxhall@alasu.edu",
+          "phone": "(334) 604-8025",
+          "office": "LWLC, Room #324"
+        }
+      ]
+    },
+    {
+      "department": "Sociology",
+      "specialists": [
+        {
+          "name": "Hassna Ramadan",
+          "title": "Digital Innovation and Access Services Librarian",
+          "email": "hramadan@alasu.edu",
+          "phone": "(334) 604-8027",
+          "office": "LWLC, Room #146"
+        }
+      ]
+    },
+    {
+      "department": "Theatre Arts",
+      "specialists": [
+        {
+          "name": "Hassna Ramadan",
+          "title": "Digital Innovation and Access Services Librarian",
+          "email": "hramadan@alasu.edu",
+          "phone": "(334) 604-8027",
+          "office": "LWLC, Room #146"
+        }
+      ]
+    },
+    {
+      "department": "University College",
+      "specialists": [
+        {
+          "name": "Teisha Robertson",
+          "title": "Science Librarian",
+          "email": "trobertson@alasu.edu",
+          "phone": "(334) 604-3110",
+          "office": "LWLC, Room #424"
+        }
+      ]
+    },
+    {
+      "department": "Visual Arts",
+      "specialists": [
+        {
+          "name": "Kashonda Murphy",
+          "title": "Historical Archivist",
+          "email": "kmurphy@alasu.edu",
+          "phone": "(334)\u00a0604-9092",
+          "office": "LWLC, Room #155"
         }
       ]
     }
