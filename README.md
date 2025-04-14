@@ -5,7 +5,7 @@ This is a static prototype for the Levi Watkins Learning Center Faculty & Staff 
 ## Contents
 
 - `index.html`: Main directory viewer (finalized version)
-- `directory.json`: Sample data source
+- `directory.json`: Directory Data Source
 - `README.md`: This file
 
 ## Previewing the Site
