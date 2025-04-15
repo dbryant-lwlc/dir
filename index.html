@@ -1,361 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Library Directory Viewer</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        /*/* Custom class for highlighted links using the directory accent color. Remove before production if branding changes. */
-        .highlight-link {
-            color: #d7ac11;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            padding: 2rem;
-            background: #f9f9f9;
-        }
-
-        nav {
-            margin-bottom: 2rem;
-        }
-
-        .search-box {
-            margin: 1rem 0;
-        }
-
-        input[type="text"] {
-            padding: 0.5rem;
-            width: 100%;
-            max-width: 400px;
-        }
-
-        .directory-table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        .directory-table th {
-            background: #000;
-            color: #fff;
-            padding: 0.75rem;
-        }
-
-        .directory-table td {
-            padding: 0.75rem;
-            border-bottom: 1px solid #d7ac11;
-            height: 4.5rem;
-            display: table-cell;
-            vertical-align: middle;
-        }
-
-        .directory-table tr:nth-child(even) td {
-            background: #eee;
-        }
-
-        .directory-table td p {
-            margin: 0;
-        }
-
-        .text-end p {
-            margin-bottom: 0;
-            line-height: 1.25rem;
-        }
-
-        .sortable:hover {
-            cursor: pointer;
-            text-decoration: underline;
-        }
-
-        .sort-indicator {
-            margin-left: 0.5rem;
-            font-size: 0.8rem;
-        }
-
-        .visually-hidden {
-            position: absolute !important;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
-            border: 0;
-        }
-
-        .fade-section {
-            opacity: 0;
-            transition: opacity 0.3s ease-in-out;
-        }
-
-        .fade-section.fade-in {
-            opacity: 1;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Library Directory Viewer</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .highlight-link { color: #d7ac11; }
+    body { font-family: Arial, sans-serif; padding: 2rem; background: #f9f9f9; }
+    nav { margin-bottom: 2rem; }
+    .search-box { margin: 1rem 0; }
+    input[type="text"] { padding: 0.5rem; width: 100%; max-width: 400px; }
+    .directory-table { width: 100%; border-collapse: collapse; }
+    .directory-table th { background: #000; color: #fff; padding: 0.75rem; }
+    .directory-table td { padding: 0.75rem; border-bottom: 1px solid #d7ac11; height: 4.5rem; display: table-cell; vertical-align: middle; }
+    .directory-table tr:nth-child(even) td { background: #eee; }
+    .directory-table td p { margin: 0; }
+    .text-end p { margin-bottom: 0; line-height: 1.25rem; }
+    .sortable:hover { cursor: pointer; text-decoration: underline; }
+    .sort-indicator { margin-left: 0.5rem; font-size: 0.8rem; }
+    .visually-hidden { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+    .fade-section { opacity: 0; transition: opacity 0.3s ease-in-out; }
+    .fade-section.fade-in { opacity: 1; }
+  </style>
 </head>
-
 <body>
-
-    <header class="d-flex justify-content-between align-items-start mb-4">
-        <div>
-            <h2 class="mb-0">Levi Watkins Learning Center</h2>
-            <h4 class="fw-normal">Faculty &amp; Staff Directory</h4>
-        </div>
-        <div class="text-end">
-            <p>Call: (334) 604-9164</p>
-            <p>Text: (334) 316-4779</p>
-            <p>Visit: <a href="#" class="fw-bold highlight-link">see hours</a></p>
-            <p><a href="#" class="fw-bold highlight-link">FAQ &amp; Submit your question</a></p>
-        </div>
-    </header>
-
-    <nav>
-        <h2 id="staff-heading" class="visually-hidden">Staff Directory</h2>
-        <h2 id="departments-heading" class="visually-hidden">Departments</h2>
-        <h2 id="subject-specialists-heading" class="visually-hidden">Subject Specialists</h2>
-        <button onclick="showSection('staff')" class="btn btn-primary">Staff</button>
-        <button onclick="showSection('departments')" class="btn btn-primary">Departments</button>
-        <button onclick="showSection('subject_specialists')" class="btn btn-primary">Subject Specialists</button>
-    </nav>
-
-    <div class="search-box">
-        <input type="text" id="searchInput" placeholder="Search by name, title, or department..."
-            oninput="filterAllSections()">
+  <header class="d-flex justify-content-between align-items-start mb-4">
+    <div>
+      <h2 class="mb-0">Levi Watkins Learning Center</h2>
+      <h4 class="fw-normal">Faculty &amp; Staff Directory</h4>
     </div>
+    <div class="text-end">
+      <p>Call: (334) 604-9164</p>
+      <p>Text: (334) 316-4779</p>
+      <p>Visit: <a href="#" class="fw-bold highlight-link">see hours</a></p>
+      <p><a href="#" class="fw-bold highlight-link">FAQ &amp; Submit your question</a></p>
+    </div>
+  </header>
+  <nav>
+    <h2 id="staff-heading" class="visually-hidden">Staff Directory</h2>
+    <h2 id="departments-heading" class="visually-hidden">Departments</h2>
+    <h2 id="subject-specialists-heading" class="visually-hidden">Subject Specialists</h2>
+    <button onclick="showSection('staff')" class="btn btn-primary">Staff</button>
+    <button onclick="showSection('departments')" class="btn btn-primary">Departments</button>
+    <button onclick="showSection('subject_specialists')" class="btn btn-primary">Subject Specialists</button>
+  </nav>
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="Search by name, title, or department..." oninput="filterAllSections()">
+  </div>
+  <section id="staff" class="table-responsive fade-section" aria-labelledby="staff-heading"></section>
+  <section id="departments" class="table-responsive fade-section" aria-labelledby="departments-heading"></section>
+  <section id="subject_specialists" class="table-responsive fade-section" aria-labelledby="subject-specialists-heading"></section>
 
-    <section id="staff" class="table-responsive fade-section" aria-labelledby="staff-heading"></section>
-    <section id="departments" class="table-responsive fade-section" aria-labelledby="departments-heading"></section>
-    <section id="subject_specialists" class="table-responsive fade-section"
-        aria-labelledby="subject-specialists-heading"></section>
+  <script>
+    let fullData = {};
+    let filteredStaff = [];
+    let filteredDepartments = [];
+    let filteredSpecialists = [];
+    let currentSort = { column: null, asc: true, table: null };
 
-    <script>
-        let fullData = {};
-        let filteredStaff = [];
-        let filteredDepartments = [];
-        let filteredSpecialists = [];
-        let currentSort = { column: null, asc: true, table: null };
+    async function loadData() {
+      try {
+        const response = await fetch('directory.json');
+        const data = await response.json();
+        fullData = data;
+        filteredStaff = data.staff;
+        filteredDepartments = data.departments;
+        filteredSpecialists = data.subject_specialists;
+        renderAll();
+        showSection('staff');
+      } catch (error) {
+        document.body.innerHTML = '<div class="alert alert-danger">Failed to load directory data. Please try again later.</div>';
+        console.error('Data loading error:', error);
+      }
+    }
 
-        async function loadData() {
-            try {
-                const response = await fetch('directory.json');
-                const data = await response.json();
-                fullData = data;
-                filteredStaff = data.staff;
-                filteredDepartments = data.departments;
-                filteredSpecialists = data.subject_specialists;
-                renderAll();
-                showSection('staff');
-            } catch (error) {
-                document.body.innerHTML = '<div class="alert alert-danger">Failed to load directory data. Please try again later.</div>';
-                console.error('Data loading error:', error);
-            }
-        }
+    function renderAll() {
+      renderStaff(filteredStaff);
+      renderDepartments(filteredDepartments);
+      renderSpecialists(filteredSpecialists);
+    }
 
-        function getSortIndicator(table, column) {
-            if (currentSort.table === table && currentSort.column === column) {
-                return currentSort.asc ? '▲' : '▼';
-            }
-            return '';
-        }
-
-        function renderAll() {
-            renderStaff(filteredStaff);
-            renderDepartments(filteredDepartments);
-            renderSpecialists(filteredSpecialists);
-
-            document.getElementById('staff-empty').style.display = filteredStaff.length === 0 ? 'block' : 'none';
-            document.getElementById('departments-empty').style.display = filteredDepartments.length === 0 ? 'block' : 'none';
-            document.getElementById('specialists-empty').style.display = filteredSpecialists.length === 0 ? 'block' : 'none';
-        }
-
-        function renderStaff(staff) {
-            const container = document.getElementById('staff');
-            container.innerHTML = `<p class="fst-italic text-muted" id="staff-empty" style="display:none;">No matching staff found.</p>` + `
+    function renderStaff(staff) {
+      const container = document.getElementById('staff');
+      container.innerHTML = `
         <table class="directory-table">
           <thead>
             <tr>
-              <th class="sortable" onclick="sortTable('staff', 'full_name')" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')sortTable('staff', 'full_name')">Name and Title <span class="sort-indicator">${getSortIndicator('staff', 'full_name')}</span></th>
-              <th class="sortable" onclick="sortTable('staff', 'department')">Department <span class="sort-indicator">${getSortIndicator('staff', 'department')}</span></th>
+              <th class="sortable" onclick="sortTable('staff', 'first_name')">First Name <span class="sort-indicator">${getSortIndicator('staff', 'first_name')}</span></th>
+              <th class="sortable" onclick="sortTable('staff', 'last_name')">Last Name <span class="sort-indicator">${getSortIndicator('staff', 'last_name')}</span></th>
+              <th class="sortable" onclick="sortTable('staff', 'title')">Title <span class="sort-indicator">${getSortIndicator('staff', 'title')}</span></th>
+              <th>Department</th>
               <th>Contact Information</th>
             </tr>
           </thead>
           <tbody>
             ${staff.map(s => `
               <tr>
-                <td><strong>${s.full_name}</strong><br>${s.title}</td>
+                <td>${s.first_name}</td>
+                <td>${s.last_name}</td>
+                <td>${s.title}</td>
                 <td>${s.department}</td>
                 <td><p>${s.email}</p><p>${s.phone}</p></td>
-              </tr>
-            `).join('')}
+              </tr>`).join('')}
           </tbody>
         </table>
       `;
-        }
+    }
 
-        function renderDepartments(departments) {
-            const container = document.getElementById('departments');
-            container.innerHTML = `<p class="fst-italic text-muted" id="departments-empty" style="display:none;">No matching departments found.</p>` + `
-        <table class="directory-table">
-          <thead>
-            <tr>
-              <th class="sortable" onclick="sortTable('departments', 'name')">Department <span class="sort-indicator">${getSortIndicator('departments', 'name')}</span></th>
-              <th>Contact Information</th>
-            </tr>
-          </thead>
-          <tbody>
-            ${departments.map(d => `
-              <tr>
-                <td>${d.name}</td>
-                <td>
-                  <p>${d.phone}</p>
-                  ${d.url ? `<p><a href="${d.url}" target="_blank">Visit Department Page</a></p>` : ''}
-                </td>
-              </tr>
-            `).join('')}
-          </tbody>
-        </table>
-      `;
-        }
+    function getSortIndicator(table, column) {
+      if (currentSort.table === table && currentSort.column === column) {
+        return currentSort.asc ? '▲' : '▼';
+      }
+      return '';
+    }
 
-        function renderSpecialists(specialists) {
-            const container = document.getElementById('subject_specialists');
-            const flattened = specialists.flatMap(group =>
-                group.specialists.map(s => ({
-                    department: group.department,
-                    name: s.name,
-                    title: s.title,
-                    email: s.email,
-                    phone: s.phone,
-                    office: s.office
-                }))
-            );
-            container.innerHTML = `<p class="fst-italic text-muted" id="specialists-empty" style="display:none;">No matching subject specialists found.</p>` + `
-        <table class="directory-table">
-          <thead>
-            <tr>
-              <th class="sortable" onclick="sortTable('specialists', 'department')">Department <span class="sort-indicator">${getSortIndicator('specialists', 'department')}</span></th>
-              <th class="sortable" onclick="sortTable('specialists', 'name')">LWLC Faculty Member <span class="sort-indicator">${getSortIndicator('specialists', 'name')}</span></th>
-              <th>Contact Information</th>
-            </tr>
-          </thead>
-          <tbody>
-            ${flattened.map(s => `
-              <tr>
-                <td>${s.department}</td>
-                <td><strong>${s.name}</strong><br>${s.title}</td>
-                <td>
-                  <p>${s.email}</p>
-                  <p>${s.phone}</p>
-                  <p>${s.office}</p>
-                </td>
-              </tr>
-            `).join('')}
-          </tbody>
-        </table>
-      `;
-        }
+    function sortTable(table, column) {
+      if (currentSort.column === column && currentSort.table === table) {
+        currentSort.asc = !currentSort.asc;
+      } else {
+        currentSort.column = column;
+        currentSort.table = table;
+        currentSort.asc = true;
+      }
+      const compare = (a, b) => {
+        const aVal = (a[column] || '').toLowerCase();
+        const bVal = (b[column] || '').toLowerCase();
+        if (aVal < bVal) return currentSort.asc ? -1 : 1;
+        if (aVal > bVal) return currentSort.asc ? 1 : -1;
+        return 0;
+      };
+      if (table === 'staff') {
+        filteredStaff.sort(compare);
+        renderStaff(filteredStaff);
+      }
+    }
 
-        function showSection(id) {
-            document.querySelectorAll('section').forEach(sec => {
-                sec.style.display = 'none';
-                sec.classList.remove('fade-in');
-            });
+    function filterAllSections() {
+      const query = document.getElementById('searchInput').value.toLowerCase();
+      filteredStaff = fullData.staff.filter(s =>
+        s.first_name.toLowerCase().includes(query) ||
+        s.last_name.toLowerCase().includes(query) ||
+        s.title.toLowerCase().includes(query) ||
+        s.department.toLowerCase().includes(query)
+      );
+      renderStaff(filteredStaff);
+    }
 
-            const target = document.getElementById(id);
-            target.style.display = 'block';
-            void target.offsetWidth; // force reflow
-            target.classList.add('fade-in');
-        }
+    function showSection(id) {
+      document.querySelectorAll('section').forEach(sec => {
+        sec.style.display = 'none';
+        sec.classList.remove('fade-in');
+      });
+      const target = document.getElementById(id);
+      target.style.display = 'block';
+      void target.offsetWidth;
+      target.classList.add('fade-in');
+    }
 
-        function filterAllSections() {
-            const query = document.getElementById('searchInput').value.toLowerCase();
-
-            filteredStaff = fullData.staff.filter(s =>
-                s.full_name.toLowerCase().includes(query) ||
-                s.title.toLowerCase().includes(query) ||
-                s.department.toLowerCase().includes(query)
-            );
-
-            filteredDepartments = fullData.departments.filter(d =>
-                d.name.toLowerCase().includes(query) ||
-                d.phone.toLowerCase().includes(query) ||
-                (d.url && d.url.toLowerCase().includes(query))
-            );
-
-            filteredSpecialists = fullData.subject_specialists.filter(group =>
-                group.department.toLowerCase().includes(query) ||
-                group.specialists.some(s =>
-                    s.name.toLowerCase().includes(query) ||
-                    s.title.toLowerCase().includes(query) ||
-                    s.email.toLowerCase().includes(query)
-                )
-            );
-
-            renderAll();
-        }
-
-        function sortTable(table, column) {
-            if (currentSort.column === column && currentSort.table === table) {
-                currentSort.asc = !currentSort.asc;
-            } else {
-                currentSort.column = column;
-                currentSort.table = table;
-                currentSort.asc = true;
-            }
-
-            const compare = (a, b) => {
-                const aVal = (a[column] || '').toLowerCase();
-                const bVal = (b[column] || '').toLowerCase();
-                if (aVal < bVal) return currentSort.asc ? -1 : 1;
-                if (aVal > bVal) return currentSort.asc ? 1 : -1;
-                return 0;
-            };
-
-            if (table === 'staff') {
-                filteredStaff.sort(compare);
-                renderStaff(filteredStaff);
-            } else if (table === 'departments') {
-                filteredDepartments.sort(compare);
-                renderDepartments(filteredDepartments);
-            } else if (table === 'specialists') {
-                const flattened = fullData.subject_specialists.flatMap(group =>
-                    group.specialists.map(s => ({
-                        department: group.department,
-                        name: s.name,
-                        title: s.title,
-                        email: s.email,
-                        phone: s.phone,
-                        office: s.office
-                    }))
-                );
-                filteredSpecialists = groupSpecialists(flattened.sort(compare));
-                renderSpecialists(filteredSpecialists);
-            }
-        }
-
-        function groupSpecialists(flatList) {
-            const grouped = {};
-            for (const s of flatList) {
-                if (!grouped[s.department]) grouped[s.department] = [];
-                grouped[s.department].push(s);
-            }
-            return Object.entries(grouped).map(([department, members]) => ({
-                department,
-                specialists: members.map(m => ({
-                    name: m.name,
-                    title: m.title,
-                    email: m.email,
-                    phone: m.phone,
-                    office: m.office
-                }))
-            }));
-        }
-
-        loadData();
-    </script>
+    loadData();
+  </script>
 </body>
-
 </html>
