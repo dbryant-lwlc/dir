@@ -110,16 +110,16 @@
 
     function renderDepartments(departments) {
       const container = document.getElementById('departments');
-      const sorted = [...departments].sort((a, b) => a.name.localeCompare(b.name));
       container.innerHTML = `
         <table class="directory-table">
           <thead>
             <tr>
-              <th>Department</th><th>Contact Information</th>
+              <th class="sortable" onclick="sortTable('departments', 'name')">Department <span class="sort-indicator">${getSortIndicator('departments', 'name')}</span></th>
+              <th class="sortable" onclick="sortTable('departments', 'contact')">Contact Information</th>
             </tr>
           </thead>
           <tbody>
-            ${sorted.map(d => `
+            ${departments.map(d => `
               <tr>
                 <td>${d.name}</td>
                 <td>
@@ -135,24 +135,31 @@
 
     function renderSpecialists(subjectSpecialists) {
       const container = document.getElementById('subject_specialists');
-      const sorted = subjectSpecialists.slice().sort((a, b) => a.department.localeCompare(b.department));
       container.innerHTML = `
         <table class="directory-table">
           <thead>
-            <tr><th>Department</th><th>LWLC Faculty Member</th><th>Contact Information</th></tr>
+            <tr>
+              <th class="sortable" onclick="sortTable('specialists', 'department')">Department <span class="sort-indicator">${getSortIndicator('specialists', 'department')}</span></th>
+              <th class="sortable" onclick="sortTable('specialists', 'name')">LWLC Faculty Member <span class="sort-indicator">${getSortIndicator('specialists', 'name')}</span></th>
+              <th>Contact Information</th>
+            </tr>
           </thead>
           <tbody>
-            ${sorted.map(g =>
-              g.specialists.map(s => `
-                <tr>
-                  <td>${g.department}</td>
-                  <td>${s.name}, ${s.title}</td>
-                  <td><p>${s.email}</p><p>${s.phone}</p></td>
-                </tr>`).join('')
-            ).join('')}
+            ${flattenedSpecialists().map(s => `
+              <tr>
+                <td>${s.department}</td>
+                <td>${s.name}, ${s.title}</td>
+                <td><p>${s.email}</p><p>${s.phone}</p></td>
+              </tr>`).join('')}
           </tbody>
         </table>
       `;
+    }
+
+    function flattenedSpecialists() {
+      return filteredSpecialists.flatMap(group =>
+        group.specialists.map(s => ({ ...s, department: group.department }))
+      );
     }
 
     function getSortIndicator(table, column) {
@@ -170,6 +177,7 @@
         currentSort.table = table;
         currentSort.asc = true;
       }
+
       const compare = (a, b) => {
         const aVal = (a[column] || '').toLowerCase();
         const bVal = (b[column] || '').toLowerCase();
@@ -177,9 +185,20 @@
         if (aVal > bVal) return currentSort.asc ? 1 : -1;
         return 0;
       };
+
       if (table === 'staff') {
         filteredStaff.sort(compare);
         renderStaff(filteredStaff);
+      } else if (table === 'departments') {
+        filteredDepartments.sort(compare);
+        renderDepartments(filteredDepartments);
+      } else if (table === 'specialists') {
+        filteredSpecialists = filteredSpecialists.sort((a, b) => {
+          const aFlat = flattenedSpecialists().find(s => s.department === a.department);
+          const bFlat = flattenedSpecialists().find(s => s.department === b.department);
+          return compare(aFlat, bFlat);
+        });
+        renderSpecialists(filteredSpecialists);
       }
     }
 
