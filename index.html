@@ -90,7 +90,7 @@
               <th class="sortable" onclick="sortTable('staff', 'first_name')">First Name <span class="sort-indicator">${getSortIndicator('staff', 'first_name')}</span></th>
               <th class="sortable" onclick="sortTable('staff', 'last_name')">Last Name <span class="sort-indicator">${getSortIndicator('staff', 'last_name')}</span></th>
               <th class="sortable" onclick="sortTable('staff', 'title')">Title <span class="sort-indicator">${getSortIndicator('staff', 'title')}</span></th>
-              <th>Department</th>
+              <th class="sortable" onclick="sortTable('staff', 'department')">Department <span class="sort-indicator">${getSortIndicator('staff', 'department')}</span></th>
               <th>Contact Information</th>
             </tr>
           </thead>
@@ -110,13 +110,16 @@
 
     function renderDepartments(departments) {
       const container = document.getElementById('departments');
+      const sorted = [...departments].sort((a, b) => a.name.localeCompare(b.name));
       container.innerHTML = `
         <table class="directory-table">
           <thead>
-            <tr><th>Department</th><th>Contact Information</th></tr>
+            <tr>
+              <th>Department</th><th>Contact Information</th>
+            </tr>
           </thead>
           <tbody>
-            ${departments.map(d => `
+            ${sorted.map(d => `
               <tr>
                 <td>${d.name}</td>
                 <td>
@@ -132,13 +135,14 @@
 
     function renderSpecialists(subjectSpecialists) {
       const container = document.getElementById('subject_specialists');
+      const sorted = subjectSpecialists.slice().sort((a, b) => a.department.localeCompare(b.department));
       container.innerHTML = `
         <table class="directory-table">
           <thead>
             <tr><th>Department</th><th>LWLC Faculty Member</th><th>Contact Information</th></tr>
           </thead>
           <tbody>
-            ${subjectSpecialists.map(g =>
+            ${sorted.map(g =>
               g.specialists.map(s => `
                 <tr>
                   <td>${g.department}</td>
