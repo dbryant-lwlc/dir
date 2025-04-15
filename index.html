@@ -108,6 +108,49 @@
       `;
     }
 
+    function renderDepartments(departments) {
+      const container = document.getElementById('departments');
+      container.innerHTML = `
+        <table class="directory-table">
+          <thead>
+            <tr><th>Department</th><th>Contact Information</th></tr>
+          </thead>
+          <tbody>
+            ${departments.map(d => `
+              <tr>
+                <td>${d.name}</td>
+                <td>
+                  ${d.phone ? `<p>${d.phone}</p>` : ''}
+                  ${d.email ? `<p>${d.email}</p>` : ''}
+                  ${d.url ? `<p><a href="${d.url}" class="highlight-link">Visit Department Page</a></p>` : ''}
+                </td>
+              </tr>`).join('')}
+          </tbody>
+        </table>
+      `;
+    }
+
+    function renderSpecialists(subjectSpecialists) {
+      const container = document.getElementById('subject_specialists');
+      container.innerHTML = `
+        <table class="directory-table">
+          <thead>
+            <tr><th>Department</th><th>LWLC Faculty Member</th><th>Contact Information</th></tr>
+          </thead>
+          <tbody>
+            ${subjectSpecialists.map(g =>
+              g.specialists.map(s => `
+                <tr>
+                  <td>${g.department}</td>
+                  <td>${s.name}, ${s.title}</td>
+                  <td><p>${s.email}</p><p>${s.phone}</p></td>
+                </tr>`).join('')
+            ).join('')}
+          </tbody>
+        </table>
+      `;
+    }
+
     function getSortIndicator(table, column) {
       if (currentSort.table === table && currentSort.column === column) {
         return currentSort.asc ? '▲' : '▼';
