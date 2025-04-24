@@ -160,10 +160,10 @@
     }
 
     function getSortIndicator(table, column) {
-      if (currentSort.table === table && currentSort.column === column) {
-        return currentSort.asc ? '▲' : '▼';
-      }
-      return '';
+  if (currentSort.table === table && currentSort.column === column) {
+    return currentSort.asc ? '▲' : '▼';
+  }
+  return '►';
     }
 
     function sortTable(table, column) {
