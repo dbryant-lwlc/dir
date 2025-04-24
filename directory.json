@@ -319,88 +319,167 @@
   "departments": [
     {
       "name": "Administration",
-      "phone": "(334) 229-4106",
-      "url": null
+      "location": [
+        "LWLC 2nd Floor, Administrative Suite"
+      ],
+      "contact": [
+        "(334) 229-4106"
+      ]
     },
     {
       "name": "Acquisitions",
-      "phone": "(334) 604-8045",
-      "url": null
+      "location": [
+        "LWLC 2nd Floor"
+      ],
+      "contact": [
+        "(334) 604-8045"
+      ]
     },
     {
       "name": "Archives",
-      "phone": "email: archives@alasu.edu",
+      "location": [
+        "LWLC 2nd Floor"
+      ],
+      "contact": [
+        "(334) 229-6827",
+        "email: archives@alasu.edu"
+      ],
       "url": "https://www.lib.alasu.edu/archives/index.html"
     },
     {
       "name": "Cataloging",
-      "phone": "(334) 604-8025",
-      "url": null
+      "location": [
+        "LWLC 3rd Floor"
+      ],
+      "contact": [
+        "(334) 604-8025"
+      ]
     },
     {
       "name": "Circulation & Reference",
-      "phone": "(334) 604-9164",
-      "url": null
+      "location": [
+        "LWLC 1st Floor Information Desk"
+      ],
+      "contact": [
+        "(334) 604-9164"
+      ]
     },
     {
       "name": "Computer Labs",
-      "phone": "(334) 604-8192",
+      "location": [
+        "LWLC 1st, 3rd, and 5th Floors"
+      ],
+      "contact": [
+        "(334) 604-8192"
+      ],
       "url": "https://www.lib.alasu.edu/computer-lab.html"
     },
     {
       "name": "Curriculums Material Center",
-      "phone": "(334) 604-9057",
-      "url": null
+      "location": [
+        "LWLC 5th Floor"
+      ],
+      "contact": [
+        "(334) 604-9057"
+      ]
     },
     {
       "name": "Information Desks",
-      "phone": "(334) 604-9164 LWLC 1st Floor",
-      "url": null
+      "location": [
+        "LWLC 1st Floor",
+        "LWLC 3rd Floor",
+        "LWLC 4th Floor",
+        "LWLC 5th Floor"
+      ],
+      "contact": [
+        "(334) 604-9164",
+        "(334) 604-8429",
+        "(334) 604-8332",
+        "(334) 604-8065"
+      ]
     },
     {
       "name": "Information Literacy",
-      "phone": "Instruction Request",
+      "location": [],
+      "contact": [
+        "(334) 604-9057"
+      ],
       "url": "https://alasu.libguides.com/faculty/infolit"
     },
     {
       "name": "Instructional Technology",
-      "phone": "LWLC 5th Floor",
+      "location": [
+        "LWLC 5th Floor"
+      ],
+      "contact": [
+        "(334) 604-8112"
+      ],
       "url": "https://www.lib.alasu.edu/itservices.html"
     },
     {
       "name": "Interlibrary Loan",
-      "phone": "",
+      "location": [],
+      "contact": [
+        "(334) 229-5108"
+      ],
       "url": "https://www.lib.alasu.edu/interlibrary-loan.html"
     },
     {
       "name": "Media Center",
-      "phone": "(334) 229-6848",
+      "location": [
+        "LWLC 5th Floor"
+      ],
+      "contact": [
+        "(334) 229-6848"
+      ],
       "url": "https://www.lib.alasu.edu/media-center.html"
     },
     {
       "name": "National Center for the Study of Civil Rights & African-American Culture",
-      "phone": "(334) 229-4876",
+      "location": [
+        "LWLC 2nd Floor"
+      ],
+      "contact": [
+        "(334) 229-4876",
+        "email: civilrightscenter@alasu.edu"
+      ],
       "url": "https://www.lib.alasu.edu/natctr"
     },
     {
       "name": "Scholarly Communication",
-      "phone": "(334)604-8084",
-      "url": null
+      "location": [
+        "LWLC 1st Floor (Dr. Natasha Jenkins)"
+      ],
+      "contact": [
+        "(334)604-8084"
+      ]
     },
     {
       "name": "Security",
-      "phone": "(334) 229-6998",
-      "url": null
+      "location": [
+        "LWLC 1st Floor"
+      ],
+      "contact": [
+        "(334) 229-6998"
+      ]
     },
     {
       "name": "Serials/Periodicals",
-      "phone": "(334) 229-4111",
-      "url": null
+      "location": [
+        "LWLC 3rd Floor"
+      ],
+      "contact": [
+        "(334) 229-4111"
+      ]
     },
     {
       "name": "Special Collections",
-      "phone": "(334) 604-8483",
-      "url": null
+      "location": [
+        "LWLC 1st Floor"
+      ],
+      "contact": [
+        "(334) 604-8483"
+      ]
     }
   ],
   "subject_specialists": [

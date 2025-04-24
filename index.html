@@ -123,8 +123,8 @@
         ${departments.map(d => `
           <tr>
             <td>${d.url ? `<a href="${d.url}" class="highlight-link">${d.name}</a>` : d.name}</td>
-            <td>${Array.isArray(d.location) ? d.location.map(loc => `<p>${loc}</p>`).join('') : ''}</td>
-            <td>${Array.isArray(d.contact) ? d.contact.map(info => `<p>${info}</p>`).join('') : ''}</td>
+            <td>${(d.location ?? []).map(loc => `<p>${loc}</p>`).join('')}</td>
+            <td>${(d.contact ?? []).map(info => `<p>${info}</p>`).join('')}</td>
           </tr>`).join('')}
       </tbody>
     </table>`;
