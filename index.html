@@ -206,14 +206,35 @@
     }
 
     function filterAllSections() {
-      const query = document.getElementById('searchInput').value.toLowerCase();
-      filteredStaff = fullData.staff.filter(s =>
-        s.first_name.toLowerCase().includes(query) ||
-        s.last_name.toLowerCase().includes(query) ||
-        s.title.toLowerCase().includes(query) ||
-        s.department.toLowerCase().includes(query)
-      );
-      renderStaff(filteredStaff);
+  const query = document.getElementById('searchInput').value.toLowerCase();
+
+  filteredStaff = fullData.staff.filter(s =>
+    s.first_name.toLowerCase().includes(query) ||
+    s.last_name.toLowerCase().includes(query) ||
+    s.title.toLowerCase().includes(query) ||
+    s.department.toLowerCase().includes(query)
+  );
+
+  filteredDepartments = fullData.departments.filter(d =>
+    d.name.toLowerCase().includes(query) ||
+    (Array.isArray(d.location) && d.location.some(loc => loc.toLowerCase().includes(query))) ||
+    (Array.isArray(d.contact) && d.contact.some(info => info.toLowerCase().includes(query)))
+  );
+
+  filteredSpecialists = fullData.subject_specialists.map(group => ({
+    ...group,
+    specialists: group.specialists.filter(s =>
+      s.name.toLowerCase().includes(query) ||
+      s.title.toLowerCase().includes(query) ||
+      s.email.toLowerCase().includes(query) ||
+      s.phone.toLowerCase().includes(query) ||
+      group.department.toLowerCase().includes(query)
+    )
+  })).filter(group => group.specialists.length > 0);
+
+  renderStaff(filteredStaff);
+  renderDepartments(filteredDepartments);
+  renderSpecialists(filteredSpecialists);
     }
 
     function showSection(id) {
