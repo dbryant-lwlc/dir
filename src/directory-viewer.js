@@ -53,23 +53,39 @@ let fullData = {};
       `;
     }
 
-    function renderDepartments(departments) {
+    
+function renderDepartments(departments) {
   const container = document.getElementById('departments');
   container.innerHTML = `
     <table class="directory-table">
       <thead>
         <tr>
-          <th class="sortable" onclick="sortTable('departments', 'name')">Department <span class="sort-indicator">\${getSortIndicator('departments', 'name')}</span></th>
-          <th class="sortable" onclick="sortTable('departments', 'location')">Location <span class="sort-indicator">\${getSortIndicator('departments', 'location')}</span></th>
+          <th class="sortable" onclick="sortTable('departments', 'name')">Department <span class="sort-indicator">${getSortIndicator('departments', 'name')}</span></th>
+          <th class="sortable" onclick="sortTable('departments', 'location')">Location <span class="sort-indicator">${getSortIndicator('departments', 'location')}</span></th>
           <th>Contact Information</th>
         </tr>
       </thead>
       <tbody>
-        \${departments.map(d => `
+        ${departments.map(d => `
           <tr>
-            <td>\${d.url ? `<a href="\${d.url}" class="highlight-link">\${d.name}</a>` : d.name}</td>
-            <td>\${(d.location ?? []).map(loc => `<p>\${loc}</p>`).join('')}</td>
-            <td>\${(d.contact ?? []).map(info => `<p>\${info}</p>`).join('')}</td>
+            <td>${d.url ? `<a href="${d.url}" class="highlight-link">${d.name}</a>` : d.name}</td>
+            <td>${(d.location ?? []).map(loc => `<p>${loc}</p>`).join('')}</td>
+            <td>${(d.contact ?? []).map(info => `<p>${info}</p>`).join('')}</td>
+          </tr>`).join('')}
+      </tbody>
+    </table>`;
+}
+</span></th>
+          <th class="sortable" onclick="sortTable('departments', 'location')">Location <span class="sort-indicator">${getSortIndicator('departments', 'location')}</span></th>
+          <th>Contact Information</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${departments.map(d => `
+          <tr>
+            <td>${d.url ? `<a href="${d.url}" class="highlight-link">${d.name}</a>` : d.name}</td>
+            <td>${(d.location ?? []).map(loc => `<p>${loc}</p>`).join('')}</td>
+            <td>${(d.contact ?? []).map(info => `<p>${info}</p>`).join('')}</td>
           </tr>`).join('')}
       </tbody>
     </table>`;
@@ -127,8 +143,6 @@ let fullData = {};
   }
   return '►';
 }
-      return '';
-    }
 
     function sortTable(table, column) {
       if (currentSort.column === column && currentSort.table === table) {
