@@ -61,7 +61,7 @@ function renderDepartments(departments) {
         <tr>
           <th class="sortable" onclick="sortTable('departments', 'name')">Department <span class="sort-indicator">${getSortIndicator('departments', 'name')}</span></th>
           <th class="sortable" onclick="sortTable('departments', 'location')">Location <span class="sort-indicator">${getSortIndicator('departments', 'location')}</span></th>
-          <th class="sortable" onclick="sortTable('departments', 'contact')">Contact Information</th>
+          <th>Contact Information</th>
         </tr>
       </thead>
       <tbody>
@@ -109,7 +109,7 @@ function getSortIndicator(table, column) {
   if (currentSort.table === table && currentSort.column === column) {
     return currentSort.asc ? '▲' : '▼';
   }
-  return '';
+  return '►';
 }
 
 function sortTable(table, column) {
