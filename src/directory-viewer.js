@@ -6,7 +6,7 @@ let fullData = {};
 
     async function loadData() {
       try {
-        const response = await fetch('src/directory.json');
+        const response = await fetch('directory.json');
         const data = await response.json();
         fullData = data;
         filteredStaff = data.staff;
@@ -54,12 +54,26 @@ let fullData = {};
     }
 
     function renderDepartments(departments) {
-      const container = document.getElementById('departments');
-      container.innerHTML = `
-        <table class="directory-table">
-          <thead>
-            <tr>
-              <th class="sortable" onclick="sortTable('departments', 'name')">Department <span class="sort-indicator">${getSortIndicator('departments', 'name')}</span></th>
+  const container = document.getElementById('departments');
+  container.innerHTML = `
+    <table class="directory-table">
+      <thead>
+        <tr>
+          <th class="sortable" onclick="sortTable('departments', 'name')">Department <span class="sort-indicator">\${getSortIndicator('departments', 'name')}</span></th>
+          <th class="sortable" onclick="sortTable('departments', 'location')">Location <span class="sort-indicator">\${getSortIndicator('departments', 'location')}</span></th>
+          <th>Contact Information</th>
+        </tr>
+      </thead>
+      <tbody>
+        \${departments.map(d => `
+          <tr>
+            <td>\${d.url ? `<a href="\${d.url}" class="highlight-link">\${d.name}</a>` : d.name}</td>
+            <td>\${(d.location ?? []).map(loc => `<p>\${loc}</p>`).join('')}</td>
+            <td>\${(d.contact ?? []).map(info => `<p>\${info}</p>`).join('')}</td>
+          </tr>`).join('')}
+      </tbody>
+    </table>`;
+}</span></th>
               <th class="sortable" onclick="sortTable('departments', 'contact')">Contact Information</th>
             </tr>
           </thead>
@@ -108,9 +122,11 @@ let fullData = {};
     }
 
     function getSortIndicator(table, column) {
-      if (currentSort.table === table && currentSort.column === column) {
-        return currentSort.asc ? '▲' : '▼';
-      }
+  if (currentSort.table === table && currentSort.column === column) {
+    return currentSort.asc ? '▲' : '▼';
+  }
+  return '►';
+}
       return '';
     }
 
