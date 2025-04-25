@@ -1,3 +1,4 @@
+
 let fullData = {};
 let filteredStaff = [];
 let filteredDepartments = [];
@@ -122,8 +123,8 @@ function sortTable(table, column) {
   }
 
   const compare = (a, b) => {
-    const aVal = (a[column] || '').toLowerCase();
-    const bVal = (b[column] || '').toLowerCase();
+    const aVal = Array.isArray(a[column]) ? a[column].join(' ').toLowerCase() : (a[column] || '').toLowerCase();
+    const bVal = Array.isArray(b[column]) ? b[column].join(' ').toLowerCase() : (b[column] || '').toLowerCase();
     if (aVal < bVal) return currentSort.asc ? -1 : 1;
     if (aVal > bVal) return currentSort.asc ? 1 : -1;
     return 0;
