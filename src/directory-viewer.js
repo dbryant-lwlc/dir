@@ -26,6 +26,10 @@ function renderAll() {
   renderSpecialists(filteredSpecialists);
 }
 
+function highlightColumn(table, column) {
+  return currentSort.table === table && currentSort.column === column ? 'highlight-sort' : '';
+}
+
 function renderStaff(staff) {
   const container = document.getElementById('staff');
   if (staff.length === 0) {
