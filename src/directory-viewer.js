@@ -161,28 +161,32 @@ function sortTable(table, column) {
   }
 }
 
+function normalizeText(text) {
+  return (text || '').normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase();
+}
+
 function filterAllSections() {
-  const query = document.getElementById('searchInput').value.toLowerCase();
+  const query = normalizeText(document.getElementById('searchInput').value);
 
   filteredStaff = fullData.staff.filter(s =>
-    s.first_name.toLowerCase().includes(query) ||
-    s.last_name.toLowerCase().includes(query) ||
-    s.title.toLowerCase().includes(query) ||
-    s.department.toLowerCase().includes(query)
+    normalizeText(s.first_name).includes(query) ||
+    normalizeText(s.last_name).includes(query) ||
+    normalizeText(s.title).includes(query) ||
+    normalizeText(s.department).includes(query)
   );
 
   filteredDepartments = fullData.departments.filter(d =>
-    d.name.toLowerCase().includes(query) ||
-    (d.location ?? []).some(loc => loc.toLowerCase().includes(query)) ||
-    (d.contact ?? []).some(info => info.toLowerCase().includes(query))
+    normalizeText(d.name).includes(query) ||
+    (d.location ?? []).some(loc => normalizeText(loc).includes(query)) ||
+    (d.contact ?? []).some(info => normalizeText(info).includes(query))
   );
 
   filteredSpecialists = fullData.subject_specialists.map(group => {
     const filtered = group.specialists.filter(s =>
-      s.name.toLowerCase().includes(query) ||
-      s.title.toLowerCase().includes(query) ||
-      s.email.toLowerCase().includes(query) ||
-      s.phone.toLowerCase().includes(query)
+      normalizeText(s.name).includes(query) ||
+      normalizeText(s.title).includes(query) ||
+      normalizeText(s.email).includes(query) ||
+      normalizeText(s.phone).includes(query)
     );
     return filtered.length ? { department: group.department, specialists: filtered } : null;
   }).filter(Boolean);
@@ -203,7 +207,6 @@ function showSection(id) {
 
 loadData();
 
-// Add minimal style support (note: real CSS should be in your CSS file)
 const style = document.createElement('style');
 style.innerHTML = `.highlight-sort { background-color: #f9f9c5; }`;
 document.head.appendChild(style);
