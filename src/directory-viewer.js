@@ -102,18 +102,18 @@ let fullData = {};
     }
 
     function flattenedSpecialists() {
-      return filteredSpecialists.flatMap(group =>
+
         group.specialists.map(s => ({ ...s, department: group.department }))
       );
     }
 
     function getSortIndicator(table, column) {
   if (currentSort.table === table && currentSort.column === column) {
-    return currentSort.asc ? '▲' : '▼';
+
   }
-  return '►';
+
 }
-      return '';
+
     }
 
     function sortTable(table, column) {
@@ -130,7 +130,7 @@ let fullData = {};
         const bVal = (b[column] || '').toLowerCase();
         if (aVal < bVal) return currentSort.asc ? -1 : 1;
         if (aVal > bVal) return currentSort.asc ? 1 : -1;
-        return 0;
+
       };
 
       if (table === 'staff') {
@@ -143,7 +143,7 @@ let fullData = {};
         filteredSpecialists = filteredSpecialists.sort((a, b) => {
           const aFlat = flattenedSpecialists().find(s => s.department === a.department);
           const bFlat = flattenedSpecialists().find(s => s.department === b.department);
-          return compare(aFlat, bFlat);
+
         });
         renderSpecialists(filteredSpecialists);
       }
