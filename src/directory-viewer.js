@@ -205,10 +205,14 @@ function showSection(id) {
   target.classList.add('fade-in');
 
   document.querySelectorAll('nav button').forEach(btn => {
-    btn.classList.remove('active-button');
+    btn.classList.remove('btn-warning', 'active-button');
+    btn.classList.add('btn-primary');
   });
   const activeBtn = document.querySelector(`nav button[onclick*="${id}"]`);
-  if (activeBtn) activeBtn.classList.add('active-button');
+  if (activeBtn) {
+    activeBtn.classList.remove('btn-primary');
+    activeBtn.classList.add('btn-warning', 'active-button');
+  }
 }
 
 loadData();
@@ -216,10 +220,5 @@ loadData();
 const style = document.createElement('style');
 style.innerHTML = `
   .highlight-sort { background-color: #f9f9c5; }
-  .active-button {
-    background-color: #d7ac11 !important;
-    color: #000 !important;
-    font-weight: bold;
-  }
 `;
 document.head.appendChild(style);
