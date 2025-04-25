@@ -79,7 +79,7 @@ function renderDepartments(departments) {
       <tbody>
         ${departments.map(d => `
           <tr>
-            <td>${d.name}</td>
+            <td>${d.url ? `<a href="${d.url}" class="highlight-link" target="_blank">${d.name}</a>` : d.name}</td>
             <td>${(d.location ?? []).map(loc => `<p>${loc}</p>`).join('')}</td>
             <td>${(d.contact ?? []).map(info => `<p>${info}</p>`).join('')}</td>
           </tr>`).join('')}
