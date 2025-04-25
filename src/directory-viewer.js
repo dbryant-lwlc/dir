@@ -6,7 +6,7 @@ let fullData = {};
 
     async function loadData() {
       try {
-        const response = await fetch('directory.json');
+        const response = await fetch('src/directory.json');
         const data = await response.json();
         fullData = data;
         filteredStaff = data.staff;
