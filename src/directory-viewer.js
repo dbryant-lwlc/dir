@@ -28,14 +28,18 @@ function renderAll() {
 
 function renderStaff(staff) {
   const container = document.getElementById('staff');
+  if (staff.length === 0) {
+    container.innerHTML = '<p>No results found.</p>';
+    return;
+  }
   container.innerHTML = `
     <table class="directory-table">
       <thead>
         <tr>
-          <th class="sortable" onclick="sortTable('staff', 'first_name')">First Name <span class="sort-indicator">${getSortIndicator('staff', 'first_name')}</span></th>
-          <th class="sortable" onclick="sortTable('staff', 'last_name')">Last Name <span class="sort-indicator">${getSortIndicator('staff', 'last_name')}</span></th>
-          <th class="sortable" onclick="sortTable('staff', 'title')">Title <span class="sort-indicator">${getSortIndicator('staff', 'title')}</span></th>
-          <th class="sortable" onclick="sortTable('staff', 'department')">Department <span class="sort-indicator">${getSortIndicator('staff', 'department')}</span></th>
+          <th class="sortable ${highlightColumn('staff', 'first_name')}" onclick="sortTable('staff', 'first_name')">First Name <span class="sort-indicator">${getSortIndicator('staff', 'first_name')}</span></th>
+          <th class="sortable ${highlightColumn('staff', 'last_name')}" onclick="sortTable('staff', 'last_name')">Last Name <span class="sort-indicator">${getSortIndicator('staff', 'last_name')}</span></th>
+          <th class="sortable ${highlightColumn('staff', 'title')}" onclick="sortTable('staff', 'title')">Title <span class="sort-indicator">${getSortIndicator('staff', 'title')}</span></th>
+          <th class="sortable ${highlightColumn('staff', 'department')}" onclick="sortTable('staff', 'department')">Department <span class="sort-indicator">${getSortIndicator('staff', 'department')}</span></th>
           <th>Contact Information</th>
         </tr>
       </thead>
@@ -55,12 +59,16 @@ function renderStaff(staff) {
 
 function renderDepartments(departments) {
   const container = document.getElementById('departments');
+  if (departments.length === 0) {
+    container.innerHTML = '<p>No results found.</p>';
+    return;
+  }
   container.innerHTML = `
     <table class="directory-table">
       <thead>
         <tr>
-          <th class="sortable" onclick="sortTable('departments', 'name')">Department <span class="sort-indicator">${getSortIndicator('departments', 'name')}</span></th>
-          <th class="sortable" onclick="sortTable('departments', 'location')">Location <span class="sort-indicator">${getSortIndicator('departments', 'location')}</span></th>
+          <th class="sortable ${highlightColumn('departments', 'name')}" onclick="sortTable('departments', 'name')">Department <span class="sort-indicator">${getSortIndicator('departments', 'name')}</span></th>
+          <th class="sortable ${highlightColumn('departments', 'location')}" onclick="sortTable('departments', 'location')">Location <span class="sort-indicator">${getSortIndicator('departments', 'location')}</span></th>
           <th>Contact Information</th>
         </tr>
       </thead>
@@ -78,12 +86,16 @@ function renderDepartments(departments) {
 
 function renderSpecialists(subjectSpecialists) {
   const container = document.getElementById('subject_specialists');
+  if (subjectSpecialists.length === 0) {
+    container.innerHTML = '<p>No results found.</p>';
+    return;
+  }
   container.innerHTML = `
     <table class="directory-table">
       <thead>
         <tr>
-          <th class="sortable" onclick="sortTable('specialists', 'department')">Department <span class="sort-indicator">${getSortIndicator('specialists', 'department')}</span></th>
-          <th class="sortable" onclick="sortTable('specialists', 'name')">LWLC Faculty Member <span class="sort-indicator">${getSortIndicator('specialists', 'name')}</span></th>
+          <th class="sortable ${highlightColumn('specialists', 'department')}" onclick="sortTable('specialists', 'department')">Department <span class="sort-indicator">${getSortIndicator('specialists', 'department')}</span></th>
+          <th class="sortable ${highlightColumn('specialists', 'name')}" onclick="sortTable('specialists', 'name')">LWLC Faculty Member <span class="sort-indicator">${getSortIndicator('specialists', 'name')}</span></th>
           <th>Contact Information</th>
         </tr>
       </thead>
@@ -110,6 +122,10 @@ function getSortIndicator(table, column) {
     return currentSort.asc ? '▲' : '▼';
   }
   return '►';
+}
+
+function highlightColumn(table, column) {
+  return currentSort.table === table && currentSort.column === column ? 'highlight-sort' : '';
 }
 
 function sortTable(table, column) {
@@ -186,3 +202,8 @@ function showSection(id) {
 }
 
 loadData();
+
+// Add minimal style support (note: real CSS should be in your CSS file)
+const style = document.createElement('style');
+style.innerHTML = `.highlight-sort { background-color: #f9f9c5; }`;
+document.head.appendChild(style);
