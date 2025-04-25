@@ -1,4 +1,3 @@
-
 let fullData = {};
 let filteredStaff = [];
 let filteredDepartments = [];
@@ -148,13 +147,31 @@ function sortTable(table, column) {
 
 function filterAllSections() {
   const query = document.getElementById('searchInput').value.toLowerCase();
+
   filteredStaff = fullData.staff.filter(s =>
     s.first_name.toLowerCase().includes(query) ||
     s.last_name.toLowerCase().includes(query) ||
     s.title.toLowerCase().includes(query) ||
     s.department.toLowerCase().includes(query)
   );
-  renderStaff(filteredStaff);
+
+  filteredDepartments = fullData.departments.filter(d =>
+    d.name.toLowerCase().includes(query) ||
+    (d.location ?? []).some(loc => loc.toLowerCase().includes(query)) ||
+    (d.contact ?? []).some(info => info.toLowerCase().includes(query))
+  );
+
+  filteredSpecialists = fullData.subject_specialists.map(group => {
+    const filtered = group.specialists.filter(s =>
+      s.name.toLowerCase().includes(query) ||
+      s.title.toLowerCase().includes(query) ||
+      s.email.toLowerCase().includes(query) ||
+      s.phone.toLowerCase().includes(query)
+    );
+    return filtered.length ? { department: group.department, specialists: filtered } : null;
+  }).filter(Boolean);
+
+  renderAll();
 }
 
 function showSection(id) {
