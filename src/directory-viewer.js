@@ -223,6 +223,6 @@ loadData();
 
 const style = document.createElement('style');
 style.innerHTML = `
-  .highlight-sort { background-color: #f9f9c5; }
+  .highlight-sort { background-color: #f9f9c5 !important; }
 `;
 document.head.appendChild(style);
